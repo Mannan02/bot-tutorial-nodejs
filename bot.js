@@ -7,9 +7,15 @@ function respond() {
     var request = JSON.parse(this.req.chunks[0]);
     var botRegex = /^\/cool guy$/;
     var cccRegex = /CCC/;
+    var cccRegex2 = /When is CCC/;
+    var cccRegex3 = /When's CCC/;
     if (request.text && botRegex.test(request.text)) {
         this.res.writeHead(200);
         postMessage();
+        this.res.end();
+    } else if (request.text && (cccRegex3.test(request.text) || cccRegex3.test(request.text))) {
+        this.res.writeHead(200);
+        postCCCMessage2();
         this.res.end();
     } else if (request.text && cccRegex.test(request.text)) {
         this.res.writeHead(200);
@@ -27,6 +33,41 @@ function postCCCMessage() {
     var botResponse, options, body, botReq;
 
     botResponse = "Campus Cultural Challenge is a competition wherein participants complete activities at different booths focused on different regions of the world. Participants have the opportunity to earn points at each station by completing the activity and answering trivia questions about the booth’s region. The participants who obtain the most points will obtain prizes at the end of the competition.";
+
+    options = {
+        hostname: 'api.groupme.com',
+        path: '/v3/bots/post',
+        method: 'POST'
+    };
+
+    body = {
+        "bot_id": botID,
+        "text": botResponse
+    };
+
+    console.log('sending ' + botResponse + ' to ' + botID);
+
+    botReq = HTTPS.request(options, function(res) {
+        if (res.statusCode == 202) {
+            //neat
+        } else {
+            console.log('rejecting bad status code ' + res.statusCode);
+        }
+    });
+
+    botReq.on('error', function(err) {
+        console.log('error posting message ' + JSON.stringify(err));
+    });
+    botReq.on('timeout', function(err) {
+        console.log('timeout posting message ' + JSON.stringify(err));
+    });
+    botReq.end(JSON.stringify(body));
+}
+
+function postCCCMessage2() {
+    var botResponse, options, body, botReq;
+
+    botResponse = "CCC is on the 24th Post up Bitches";
 
     options = {
         hostname: 'api.groupme.com',
