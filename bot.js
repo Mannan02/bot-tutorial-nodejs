@@ -22,7 +22,7 @@ function respond() {
     }
 }
 
-function postMessage() {
+function postCCCMessage() {
     var botResponse, options, body, botReq;
 
     botResponse = "Campus Cultural Challenge is a competition wherein participants complete activities at different booths focused on different regions of the world. Participants have the opportunity to earn points at each station by completing the activity and answering trivia questions about the booth’s region. The participants who obtain the most points will obtain prizes at the end of the competition.";
@@ -60,7 +60,7 @@ function postMessage() {
 function postMessage() {
     var botResponse, options, body, botReq;
 
-    botResponse = "";
+    botResponse = cool();
 
     options = {
         hostname: 'api.groupme.com',
