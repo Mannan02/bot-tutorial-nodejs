@@ -18,7 +18,7 @@ function respond() {
     } else {
         console.log("don't care");
         this.res.writeHead(200);
-        postCCCMessage();
+        //postCCCMessage();
         this.res.end();
     }
 }
@@ -35,7 +35,7 @@ function postCCCMessage() {
     };
 
     body = {
-        "bot_id": "db65fe234bf77178516ed8ef57",
+        "bot_id": botID,
         "text": botResponse
     };
 
