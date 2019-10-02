@@ -13,7 +13,7 @@ function respond() {
         this.res.writeHead(200);
         postMessage();
         this.res.end();
-    } else if (request.text && (cccRegex3.test(request.text) || cccRegex3.test(request.text))) {
+    } else if (request.text && (cccRegex2.test(request.text) || cccRegex3.test(request.text))) {
         this.res.writeHead(200);
         postCCCMessage2();
         this.res.end();
