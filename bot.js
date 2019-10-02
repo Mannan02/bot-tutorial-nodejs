@@ -6,7 +6,7 @@ var botID = process.env.BOT_ID;
 function respond() {
     var request = JSON.parse(this.req.chunks[0]);
     var botRegex = /^\/cool guy$/;
-    var cccRegex = /^CCC$/;
+    var cccRegex = /CCC/;
     if (request.text && botRegex.test(request.text)) {
         this.res.writeHead(200);
         postMessage();
