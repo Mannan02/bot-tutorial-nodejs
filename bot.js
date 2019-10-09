@@ -13,6 +13,7 @@ function respond() {
     var cccRegex5 = /How much are CCC tickets/
     var cccRegex6 = /Is there a link to buy CCC tickets/
     var cccRegex7 = /CJ/;
+    var cccRegex8 = /Mannan/;
     if (request.text && botRegex.test(request.text)) {
         this.res.writeHead(200);
         postMessage();
@@ -40,6 +41,10 @@ function respond() {
     } else if (request.text && cccRegex7.test(request.text)) {
         this.res.writeHead(200);
         postCCCMessage3("This man led CCC last year and coined the term Free Whataburger For a Year");
+        this.res.end();
+    } else if (request.text && cccRegex8.test(request.text)) {
+        this.res.writeHead(200);
+        postCCCMessage3("This man is leading CCC this year and striving to make it the best year yet. With some great prizes coming in hot this year, the winners are gonna make hella bread!!!");
         this.res.end();
     } else {
         console.log("don't care");
