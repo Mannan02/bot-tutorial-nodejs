@@ -12,6 +12,7 @@ function respond() {
     var cccRegex4 = /Where can I buy CCC tickets/
     var cccRegex5 = /How much are CCC tickets/
     var cccRegex6 = /Is there a link to buy CCC tickets/
+    var cccRegex7 = /CJ/;
     if (request.text && botRegex.test(request.text)) {
         this.res.writeHead(200);
         postMessage();
@@ -35,6 +36,10 @@ function respond() {
     } else if (request.text && cccRegex6.test(request.text)) {
         this.res.writeHead(200);
         postCCCMessage3("Yes of course there is: https://boxoffice.tamu.edu/online/default.asp?doWork::WScontent::loadArticle=Load&BOparam::WScontent::loadArticle::article_id=8C3D300E-E6B8-4952-9B39-27A91F9CCDC1&BOparam::WScontent::loadArticle::context_id=C7205886-F1C1-447F-9AE7-C01FD6F8C211");
+        this.res.end();
+    } else if (request.text && cccRegex6.test(request.text)) {
+        this.res.writeHead(200);
+        postCCCMessage3("This man led CCC last year and coined the term Free Whataburger For a Year");
         this.res.end();
     } else {
         console.log("don't care");
