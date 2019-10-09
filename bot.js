@@ -7,7 +7,7 @@ function respond() {
     var request = JSON.parse(this.req.chunks[0]);
     var botRegex = /^\/cool guy$/;
     var cccRegex = /CCCl/;
-    var cccRegex2 = /When is CCC/;
+    var cccRegex2 = /When and Where is CCC/;
     var cccRegex3 = /When's CCC/;
     var cccRegex4 = /Where can I buy CCC tickets/
     var cccRegex5 = /How much are CCC tickets/
@@ -82,7 +82,7 @@ function postCCCMessage() {
 function postCCCMessage2() {
     var botResponse, options, body, botReq;
 
-    botResponse = "CCC is on the 24th Post up Bitches";
+    botResponse = "CCC is on the 24th in MSC 2406 A&B Post up Bitches";
 
     options = {
         hostname: 'api.groupme.com',
