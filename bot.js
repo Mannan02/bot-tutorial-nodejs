@@ -37,7 +37,7 @@ function respond() {
         this.res.writeHead(200);
         postCCCMessage3("Yes of course there is: https://boxoffice.tamu.edu/online/default.asp?doWork::WScontent::loadArticle=Load&BOparam::WScontent::loadArticle::article_id=8C3D300E-E6B8-4952-9B39-27A91F9CCDC1&BOparam::WScontent::loadArticle::context_id=C7205886-F1C1-447F-9AE7-C01FD6F8C211");
         this.res.end();
-    } else if (request.text && cccRegex6.test(request.text)) {
+    } else if (request.text && cccRegex7.test(request.text)) {
         this.res.writeHead(200);
         postCCCMessage3("This man led CCC last year and coined the term Free Whataburger For a Year");
         this.res.end();
