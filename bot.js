@@ -44,7 +44,7 @@ function respond() {
         this.res.end();
     } else if (request.text && cccRegex8.test(request.text)) {
         this.res.writeHead(200);
-        postCCCMessage3("This man is leading CCC this year and striving to make it the best year yet. With some great prizes coming in hot this year, the winners are gonna make hella bread!!!");
+        postCCCMessage3("This man is leading CCC this year and striving to make it the best year yet. With some great prizes coming in hot this year, the winners are gonna make hella bread!!! Highkey a TikTok God");
         this.res.end();
     } else {
         console.log("don't care");
