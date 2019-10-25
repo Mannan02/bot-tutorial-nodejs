@@ -6,47 +6,50 @@ var botID = process.env.BOT_ID;
 function respond() {
     var request = JSON.parse(this.req.chunks[0]);
     var botRegex = /^\/cool guy$/;
-    var cccRegex = /CCCl/;
-    var cccRegex2 = /When and Where is CCC/;
-    var cccRegex3 = /When's CCC/;
-    var cccRegex4 = /Where can I buy CCC tickets/
-    var cccRegex5 = /How much are CCC tickets/
-    var cccRegex6 = /Is there a link to buy CCC tickets/
-    var cccRegex7 = /CJ/;
-    var cccRegex8 = /Mannan/;
+    var cccRegex = /SHARES/;
+    var cccRegex2 = /Carolina/;
+    //var cccRegex2 = /When and Where is CCC/;
+    var cccRegex3 = /When's SHARES/;
+    //var cccRegex4 = /Where can I buy CCC tickets/;
+    //var cccRegex5 = /How much are CCC tickets/;
+    //var cccRegex6 = /Is there a link to buy CCC tickets/;
+    //var cccRegex7 = /CJ/;
+    //var cccRegex2 = /Carolina/;
     if (request.text && botRegex.test(request.text)) {
         this.res.writeHead(200);
         postMessage();
         this.res.end();
-    } else if (request.text && (cccRegex2.test(request.text) || cccRegex3.test(request.text))) {
+    } else if (request.text && cccRegex3.test(request.text)) {
         this.res.writeHead(200);
-        postCCCMessage2();
+        postCCCMessage3("Collection drive is from nov 11- December 6 and the service trip is December 7.)!");
         this.res.end();
     } else if (request.text && cccRegex.test(request.text)) {
         this.res.writeHead(200);
-        postCCCMessage();
+        postCCCMessage3("SHARES!");
         this.res.end();
-    } else if (request.text && cccRegex4.test(request.text)) {
+    } else if (request.text && cccRegex2.test(request.text)) {
         this.res.writeHead(200);
         postCCCMessage3("CCC tickets are available at the MSC box office(the same place y'all payed dues)!");
         this.res.end();
-    } else if (request.text && cccRegex5.test(request.text)) {
-        this.res.writeHead(200);
-        postCCCMessage3("Tickets cost $5 for the general public, $2.50 for members and a specia; price $15 if you buy 4 tickets at once!");
-        this.res.end();
-    } else if (request.text && cccRegex6.test(request.text)) {
-        this.res.writeHead(200);
-        postCCCMessage3("Yes of course there is: https://boxoffice.tamu.edu/online/default.asp?doWork::WScontent::loadArticle=Load&BOparam::WScontent::loadArticle::article_id=8C3D300E-E6B8-4952-9B39-27A91F9CCDC1&BOparam::WScontent::loadArticle::context_id=C7205886-F1C1-447F-9AE7-C01FD6F8C211");
-        this.res.end();
-    } else if (request.text && cccRegex7.test(request.text)) {
-        this.res.writeHead(200);
-        postCCCMessage3("This man led CCC last year and coined the term Free Whataburger For a Year");
-        this.res.end();
-    } else if (request.text && cccRegex8.test(request.text)) {
-        this.res.writeHead(200);
-        postCCCMessage3("This man is leading CCC this year and striving to make it the best year yet. With some great prizes coming in hot this year, the winners are gonna make hella bread!!! Highkey a TikTok God");
-        this.res.end();
-    } else {
+    }
+    /*else if (request.text && cccRegex5.test(request.text)) {
+           this.res.writeHead(200);
+           postCCCMessage3("Tickets cost $5 for the general public, $2.50 for members and a specia; price $15 if you buy 4 tickets at once!");
+           this.res.end();
+       } else if (request.text && cccRegex6.test(request.text)) {
+           this.res.writeHead(200);
+           postCCCMessage3("Yes of course there is: https://boxoffice.tamu.edu/online/default.asp?doWork::WScontent::loadArticle=Load&BOparam::WScontent::loadArticle::article_id=8C3D300E-E6B8-4952-9B39-27A91F9CCDC1&BOparam::WScontent::loadArticle::context_id=C7205886-F1C1-447F-9AE7-C01FD6F8C211");
+           this.res.end();
+       } else if (request.text && cccRegex7.test(request.text)) {
+           this.res.writeHead(200);
+           postCCCMessage3("This man led CCC last year and coined the term Free Whataburger For a Year");
+           this.res.end();
+       } else if (request.text && cccRegex8.test(request.text)) {
+           this.res.writeHead(200);
+           postCCCMessage3("This man is leading CCC this year and striving to make it the best year yet. With some great prizes coming in hot this year, the winners are gonna make hella bread!!! Highkey a TikTok God");
+           this.res.end();
+       }*/
+    else {
         console.log("don't care");
         this.res.writeHead(200);
         //postCCCMessage();
