@@ -6,10 +6,11 @@ var botID = process.env.BOT_ID;
 function respond() {
     var request = JSON.parse(this.req.chunks[0]);
     var botRegex = /^\/cool guy$/;
-    var cccRegex = /SHARES/;
+    var cccRegex3 = /^\/SHARES$/;
     var cccRegex2 = /Carolina/;
     //var cccRegex2 = /When and Where is CCC/;
     var cccRegex3 = /When's SHARES/;
+    var cccRegex4 = /SHARes/;
     //var cccRegex4 = /Where can I buy CCC tickets/;
     //var cccRegex5 = /How much are CCC tickets/;
     //var cccRegex6 = /Is there a link to buy CCC tickets/;
@@ -21,15 +22,19 @@ function respond() {
         this.res.end();
     } else if (request.text && cccRegex3.test(request.text)) {
         this.res.writeHead(200);
-        postCCCMessage3("Collection drive is from nov 11- December 6 and the service trip is December 7.)!");
+        postCCCMessage3("Collection drive is from nov 11 - December 6 and the service trip is December 7 (Finals Who?!)!");
         this.res.end();
-    } else if (request.text && cccRegex.test(request.text)) {
+    } else if (request.text && cccRegex2.test(request.text)) {
         this.res.writeHead(200);
         postCCCMessage3("SHARES!");
         this.res.end();
     } else if (request.text && cccRegex2.test(request.text)) {
         this.res.writeHead(200);
-        postCCCMessage3("CCC tickets are available at the MSC box office(the same place y'all payed dues)!");
+        postCCCMessage3("She tryna get Shares hyped up and gonna get the school some good donations!!!");
+        this.res.end();
+    } else if (request.text && cccRegex4.test(request.text)) {
+        this.res.writeHead(200);
+        postCCCMessage3("Old army will remeber this but with the all new all Caps logo put together by PR we re-branding!!!");
         this.res.end();
     }
     /*else if (request.text && cccRegex5.test(request.text)) {
