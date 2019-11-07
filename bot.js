@@ -6,7 +6,7 @@ var botID = process.env.BOT_ID;
 function respond() {
     var request = JSON.parse(this.req.chunks[0]);
     var botRegex = /^\/cool guy$/;
-    var cccRegex3 = /^\/SHARES$/;
+    var cccRegex5 = /^\/SHARES$/;
     var cccRegex2 = /Carolina/;
     //var cccRegex2 = /When and Where is CCC/;
     var cccRegex3 = /When's SHARES/;
@@ -24,7 +24,7 @@ function respond() {
         this.res.writeHead(200);
         postCCCMessage3("Collection drive is from nov 11 - December 6 and the service trip is December 7 (Finals Who?!)!");
         this.res.end();
-    } else if (request.text && cccRegex2.test(request.text)) {
+    } else if (request.text && cccRegex5.test(request.text)) {
         this.res.writeHead(200);
         postCCCMessage3("SHARES!");
         this.res.end();
